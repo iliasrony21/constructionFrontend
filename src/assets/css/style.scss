@@ -1,0 +1,140 @@
+
+// global color
+$primary-color:#006CBB;
+$secondary-color:#FFB703;
+$text-color:#000;
+$text-white:#fff;
+
+// google fonts 
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;0,400;1,100..900&family=Noto+Sans+Elbasan&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body{
+    font-family: "Rubik", serif;
+}
+
+h1{
+    font-size: 4.5em;
+}
+h2{
+    font-size: 3em;
+}
+h3{
+    font-size: 2em;
+}
+p{
+    font-size: 1.2em;
+}
+
+.secondary-color {
+    color:#FFB703;
+}
+.primary-button {
+    position: relative;
+    background-color: $primary-color; // Initial background color
+    color: $text-white; // Initial text color
+    padding: 6px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden; // Ensures the hover effect stays within the button
+    z-index: 1;
+    transition: color 0.3s ease; // Smooth text color transition
+  }
+  
+  .primary-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $secondary-color; // Secondary background color
+    transform: translateY(-100%); // Start off-screen at the top
+    transition: transform 0.8s ease-in; // Smooth transition downwards
+    z-index: -1; // Keep the pseudo-element behind the text
+  }
+  
+  .primary-button:hover::before {
+    transform: translateY(0); // Move the background into view from top to bottom
+  }
+  
+  .primary-button:hover {
+    color: $text-white; // Change text color for contrast
+  }
+
+//   view all button 
+.view-button {
+    position: relative;
+    background-color: $secondary-color; // Initial background color
+    color: $text-white; // Initial text color
+    padding: 6px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden; // Ensures the hover effect stays within the button
+    z-index: 1;
+    transition: color 0.3s ease; // Smooth text color transition
+  }
+  
+  .view-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-color; // Secondary background color
+    transform: translateY(-100%); // Start off-screen at the top
+    transition: transform 0.8s ease-in; // Smooth transition downwards
+    z-index: -1; // Keep the pseudo-element behind the text
+  }
+  
+  .view-button:hover::before {
+    transform: translateY(0); // Move the background into view from top to bottom
+  }
+  
+  .view-button:hover {
+    color: $text-white; // Change text color for contrast
+  }
+
+//   secondary button 
+.secondary-button {
+    position: relative;
+    border: 1px solid white;
+    background-color: transparent; // Initial background color
+    color: $text-white; // Initial text color
+    padding: 6px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden; // Ensures the hover effect stays within the button
+    z-index: 1;
+    transition: color 0.3s ease; // Smooth text color transition
+  }
+  
+  .secondary-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-color:$secondary-color; // Secondary background color
+    transform: translateY(-100%); // Start off-screen at the top
+    transition: transform 0.8s ease-in; // Smooth transition downwards
+    z-index: -1; // Keep the pseudo-element behind the text
+  }
+  
+  .secondary-button:hover::before {
+    transform: translateY(0); // Move the background into view from top to bottom
+  }
+  
+  .secondary-button:hover {
+    border:1px solid $secondary-color ;
+    color: $text-white; // Change text color for contrast
+  }
+  
+  
+  
+  
