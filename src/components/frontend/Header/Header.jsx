@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
 import "../../../assets/css/style.scss";
-
+import './Header.css';
 const Header = () => {
   return (
     <div className=" sticky top-0 z-40 bg-base-100">
@@ -38,13 +38,7 @@ const Header = () => {
                 <li key={item.path}>
                   <NavLink
                     to={item.path}
-                    className={({ isActive }) =>
-                      `${
-                        isActive
-                          ? "bg-primary text-white font-bold"
-                          : "hover:bg-blue-100"
-                      } rounded-md px-3 py-2`
-                    }
+                   
                   >
                     {item.label}
                   </NavLink>
@@ -67,15 +61,7 @@ const Header = () => {
             ].map((item) => (
               <li key={item.path}>
                 <NavLink
-                  to={item.path}
-                  className={({ isActive }) =>
-                    `${
-                      isActive
-                        ? "bg-primary text-white font-bold"
-                        : "hover:bg-blue-100"
-                    } rounded-md px-3 py-2`
-                  }
-                >
+                  to={item.path}>
                   {item.label}
                 </NavLink>
               </li>

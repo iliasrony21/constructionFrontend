@@ -36,7 +36,7 @@ const Login = () => {
             }
             localStorage.setItem('userInfo',JSON.stringify(userInfo));
             login(userInfo);
-            navigate('/dashboard');
+            navigate('/admin');
             toast.success('Login successful!');
           }
         } catch (error) {

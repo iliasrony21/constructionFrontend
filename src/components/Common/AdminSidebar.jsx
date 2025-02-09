@@ -15,15 +15,15 @@ const AdminSidebar = () => {
           Dashboard
         </NavLink>
         <NavLink
-          to="/dashboard/user"
+          to="/admin/services"
           className={({ isActive }) =>
             `block px-4 py-2 hover:bg-gray-700 ${isActive ? "bg-gray-700" : ""}`
           }
         >
-          Users
+          Services
         </NavLink>
         <NavLink
-          to="/dashboard/settings"
+          to="/admin/settings"
           className={({ isActive }) =>
             `block px-4 py-2 hover:bg-gray-700 ${isActive ? "bg-gray-700" : ""}`
           }

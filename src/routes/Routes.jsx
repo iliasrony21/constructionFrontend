@@ -10,8 +10,8 @@ import ContactUs from "../components/frontend/ContactUs/ContactUs";
 import Login from "../components/Backend/Login/Login";
 import Page404 from "../components/Common/Page404";
 import Dashboard from "../components/Backend/Login/Dashboard/Dashboard";
-import AboutUs from "../components/frontend/About/About";
 import RequireAuth from "../components/Common/RequireAuth";
+import Show from "../components/Backend/Services/Show";
 
 
     const router = createBrowserRouter([
@@ -51,7 +51,7 @@ import RequireAuth from "../components/Common/RequireAuth";
           ]
         },
         {
-          path: "/dashboard",
+          path: "/admin",
           element: (
             <RequireAuth>
               <Dashboard />
@@ -59,10 +59,28 @@ import RequireAuth from "../components/Common/RequireAuth";
           ),
           errorElement: <Page404 />,
           children: [
-            { path: "user", element: <div>User Page</div> },
+            { path: "services", element: <Show/> },
             { path: "settings", element: <div>Settings Page</div> }, // Placeholder for settings
           ],
         },
+        // {
+        //   path: "/dashboard",
+        //   element: (
+        //     <RequireAuth>
+        //       <Dashboard />
+        //     </RequireAuth>
+        //   ),
+        //   errorElement: <Page404 />,
+        // },
+        // {
+        //   path: "admin/services",
+        //   element: (
+        //     <RequireAuth>
+        //       <Show />
+        //     </RequireAuth>
+        //   ),
+        //   errorElement: <Page404 />,
+        // },
       ]);
 
 
