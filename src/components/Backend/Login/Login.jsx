@@ -1,13 +1,17 @@
 import { useContext } from "react";
 import { useForm} from "react-hook-form"
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Context/Auth";
 
 const Login = () => {
   const navigate = useNavigate();
   const {login} = useContext(AuthContext);
+  const isAuthenticated = localStorage.getItem("userInfo");
 
+  if (isAuthenticated) {
+      return <Navigate to="/admin/dashboard" />;
+  }
     const {
         register,
         handleSubmit,
@@ -24,7 +28,7 @@ const Login = () => {
             body: JSON.stringify(data),
           });
           const result = await res.json();
-          console.log(result);
+          // console.log(result);
       
           if (result.status === "false") {
             toast.error(result.message || "Authentication failed!");
@@ -36,7 +40,7 @@ const Login = () => {
             }
             localStorage.setItem('userInfo',JSON.stringify(userInfo));
             login(userInfo);
-            navigate('/admin');
+            navigate('/admin/dashboard');
             toast.success('Login successful!');
           }
         } catch (error) {

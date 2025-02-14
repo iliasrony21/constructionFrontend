@@ -2,11 +2,13 @@ import { NavLink } from "react-router-dom";
 
 const AdminSidebar = () => {
   return (
-    <div className="h-screen bg-gray-800 text-white w-64 flex flex-col">
+    <div className="h-screen fixed
+     bg-gray-800 text-white
+     flex flex-col">
       <div className="text-2xl font-bold p-4 border-b border-gray-700">Admin Dashboard</div>
       <nav className="flex-grow">
         <NavLink
-          to="/dashboard"
+          to="/admin/dashboard"
           className={({ isActive }) =>
             `block px-4 py-2 hover:bg-gray-700 ${isActive ? "bg-gray-700" : ""}`
           }

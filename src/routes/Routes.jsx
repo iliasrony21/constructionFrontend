@@ -11,7 +11,9 @@ import Login from "../components/Backend/Login/Login";
 import Page404 from "../components/Common/Page404";
 import Dashboard from "../components/Backend/Login/Dashboard/Dashboard";
 import RequireAuth from "../components/Common/RequireAuth";
-import Show from "../components/Backend/Services/Show";
+import {default as ShowService} from "../components/Backend/Services/Show";
+import AdminDashboard from "../components/Backend/Login/Dashboard/AdminDashboard";
+import {default as CreateService} from "../components/Backend/Services/create";
 
 
     const router = createBrowserRouter([
@@ -59,7 +61,9 @@ import Show from "../components/Backend/Services/Show";
           ),
           errorElement: <Page404 />,
           children: [
-            { path: "services", element: <Show/> },
+            { path: "services", element: (<RequireAuth><ShowService/></RequireAuth>  )},
+            { path: "services/create", element: (<RequireAuth><CreateService/></RequireAuth>  )},
+            { path: "dashboard", element: (<RequireAuth><AdminDashboard/></RequireAuth>  )},
             { path: "settings", element: <div>Settings Page</div> }, // Placeholder for settings
           ],
         },
